@@ -1,0 +1,113 @@
+﻿/* SLIDE 03 — a full-viewport mall, with separate rows for motion and reading. */
+.problem-slide{--problem-blue:#1557ff;background:#F8F6F4;color:#101018;padding:100px 5vw 70px;isolation:isolate;overflow:hidden}
+.problem-slide>.cinematic-backdrop,.problem-slide>.story-effects{display:none}
+.problem-layout{width:100%;height:100%;max-width:1780px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(150px,1fr) clamp(180px,21vh,230px) 46px;gap:16px;align-items:stretch}
+.problem-copy{display:contents}
+.problem-intro{position:relative;z-index:3;width:60%;min-width:0;align-self:start}
+.problem-tag{display:inline-flex;gap:8px;align-items:center;padding:6px 12px;border-radius:20px;background:#e2e7ff;color:#1557ff;font-size:clamp(10px,.8vw,15px);font-weight:800;letter-spacing:.09em;margin-bottom:12px}
+.problem-tag>span{font-size:1.25em;line-height:1}
+.problem-title{position:relative;margin:0 0 14px;font:800 clamp(40px,3.6vw,70px)/1.03 var(--font-main);letter-spacing:-.055em}
+.problem-title-first,.problem-title-blue{display:block;white-space:nowrap}.problem-word,.problem-ignore{display:inline-block}.problem-word{margin-right:.13em}.problem-title-blue{color:#1557ff}
+.problem-title-accent{position:absolute;top:-12px;right:8%;width:42px;height:42px;fill:none;stroke:#1557ff;stroke-width:3;stroke-linecap:round}
+.problem-subtitle{margin:0;color:#4a556b;font-size:clamp(13px,1.08vw,21px);line-height:1.5;max-width:800px}
+/* The photo and environmental lighting cover the entire slide, not a frame. */
+.problem-scene{position:absolute;inset:0;z-index:0;pointer-events:none;perspective:none;margin:0;width:auto;max-width:none}
+.problem-retail-frame{position:absolute;inset:0;margin:0;border:0;border-radius:0;overflow:hidden;background:#e7eaf1;box-shadow:none}
+.problem-retail-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 47%;opacity:.6;filter:saturate(.65)}
+.problem-retail-frame:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#f8f6f4 0%,#f8f6f4ed 30%,#f8f6f480 65%,#e8edff40),linear-gradient(0deg,#f8f6f4 1%,#f8f6f4b0 28%,transparent 65%)}
+.problem-image-glow{display:none}
+.problem-atmosphere{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.problem-blue-sweep{position:absolute;inset:-40% -40% auto auto;width:75%;height:150%;rotate:25deg;border-left:1px solid #fff7;border-radius:50%;background:linear-gradient(130deg,#1557ff30,#c8cfff12 65%,transparent)}
+.problem-blue-sweep:after{content:'';position:absolute;inset:0 0 0 12%;border-left:1px solid #ffffff60;border-radius:50%}
+.problem-lines{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:#aebee6;stroke-width:1;opacity:.3}
+.problem-atmosphere>i{display:none}
+.problem-attention-field{position:absolute;inset:0;width:100%;height:100%;fill:none;clip-path:polygon(61% 0,100% 0,100% 100%,61% 100%)}
+.attention-trail{stroke:url(#problem-trail-ink);stroke-width:2.5;stroke-dasharray:.16 .84;stroke-linecap:round;opacity:.3}
+.problem-status{position:absolute;z-index:4;top:19%;right:5%;left:auto;display:flex;align-items:center;gap:10px;width:clamp(250px,27vw,440px);padding:12px 16px;background:#10172fee;color:#fff;border:1px solid #ffffff30;border-radius:9px;font-size:clamp(9px,.7vw,14px);font-weight:700;letter-spacing:.09em;box-shadow:0 12px 35px #10172f18}
+.problem-status-dot{width:7px;height:7px;border-radius:50%;background:#fa5570;flex-shrink:0}.problem-status svg{width:85px;height:24px;margin-left:auto;fill:none;stroke:#fa5570;stroke-width:1.8;stroke-linecap:round}
+.problem-large-eye{position:absolute;z-index:2;top:8%;right:12%;width:clamp(90px,7vw,135px);height:auto;fill:none;color:#1557ff;opacity:.4;pointer-events:none}
+.large-eye-lid{transform-origin:64px 40px}.large-eye-miss{stroke-dasharray:1;stroke-dashoffset:1;opacity:0}
+/* This row spans the full viewport. Its clipped boundary ends above the cards. */
+.problem-walkway{position:relative;z-index:2;width:calc(100% + 10vw);height:100%;margin:0 -5vw;inset:auto;overflow:hidden;pointer-events:none;min-height:0;color:#20365e}
+.walkby-caption{position:absolute;top:0;left:5vw;right:5vw;display:flex;justify-content:space-between;align-items:center;gap:18px;line-height:16px;font-size:clamp(8px,.65vw,12px);font-weight:700;letter-spacing:.11em;color:#61718c}
+.walkby-caption>span:first-child{white-space:nowrap}.walkby-caption>span:first-child>span{display:inline-block;color:#1557ff;font-size:20px;margin-left:12px;vertical-align:-1px}
+.walkby-caption>span:last-child{font-size:clamp(7px,.55vw,10px);font-weight:400;letter-spacing:.01em;text-align:right}
+.walkby-stage{position:absolute;inset:25px 0 0;container-type:inline-size;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.walkby-stage:before{content:'';position:absolute;inset:45% 0 0;background:radial-gradient(ellipse at 50% 100%,#aebfdf60,transparent 70%)}
+.walkby-floor{position:absolute;bottom:10px;left:2%;right:2%;height:1px;background:linear-gradient(90deg,transparent,#7897c3 15%,#9aafd0 85%,transparent)}
+.walkby-flow{position:absolute;bottom:9px;left:0;width:100%;height:3px;opacity:.35;background:repeating-linear-gradient(90deg,transparent 0 65px,#8faaff80 65px 92px,transparent 92px 145px)}
+.walkby-person{position:absolute;left:0;bottom:0;height:100%;aspect-ratio:72/128;color:#20365e;transform:translateX(14cqw);transform-origin:50% 100%;opacity:.95;filter:drop-shadow(3px 10px 6px #20365e12)}
+.walkby-person svg{display:block;width:100%;height:100%;overflow:visible}.walkby-person-1{color:#8b9fbe;scale:.8;transform:translateX(32cqw);opacity:.75}.walkby-person-2{color:#3d609b;scale:.94;transform:translateX(52cqw)}.walkby-person-3{color:#9aabc7;scale:.76;transform:translateX(72cqw);opacity:.8}.walkby-person-4{color:#526e9e;scale:.88;transform:translateX(88cqw)}
+.walkby-bag{fill:#1557ff;stroke:#c6d6f7;stroke-width:1}.walkby-person-1 .walkby-bag,.walkby-person-3 .walkby-bag{fill:#98afd5}
+.walkby-leg{transform-origin:36px 80px}.walkby-front-arm{transform-origin:37px 43px}.walkby-back-arm{transform-origin:34px 43px}
+.walkby-ad{position:absolute;bottom:10px;left:43%;height:87%;max-height:none;width:clamp(65px,6.5vw,120px);z-index:-1}
+.walkby-ad-two{left:83%;height:68%;width:clamp(42px,4vw,75px);opacity:.55;transform-origin:50% 100%}
+.walkby-ad-screen{position:absolute;top:0;left:0;width:100%;height:79%;border:2px solid #8ea3c2;border-right:6px solid #7a8da9;border-radius:7px;background:linear-gradient(145deg,#2e4367,#121f3a);box-shadow:5px 8px 14px #172f5520;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#e0e8f7;font-size:clamp(20px,1.7vw,34px);font-weight:800;letter-spacing:.04em}
+.walkby-ad-screen b{display:block;width:55%;height:4px;background:#617fb4;border-radius:2px}.walkby-ad-screen b:nth-of-type(2){width:40%;opacity:.6}.walkby-ad-screen b:nth-of-type(3){width:48%;opacity:.4}
+.walkby-ad-foot{position:absolute;top:79%;height:21%;width:12px;left:calc(50% - 6px);background:linear-gradient(90deg,#8094b0,#abb8cd,#7a8ba4)}
+.walkby-ad-foot:after{content:'';position:absolute;bottom:0;left:-20px;width:55px;height:4px;background:#8ea2bf;border-radius:50%}
+.walkby-ad-signal{position:absolute;inset:-8px -16px 10%;border:2px solid #1557ff;border-radius:14px;opacity:0;transform-origin:center}
+/* A wide, opaque reading dock is outside the animation row. */
+.problem-cards{position:relative;z-index:3;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;height:100%;min-height:0}
+.problem-card{position:relative;min-width:0;height:100%;border:1px solid #dce2ef;border-radius:13px;background:#fffffff5;padding:14px 16px 16px;box-shadow:0 12px 28px #172f5510;transition:translate .3s,box-shadow .3s,border-color .3s}
+.problem-card:first-child{background:linear-gradient(155deg,#fff,#eef1ff);border-color:#c9d4ff}
+.problem-card:hover,.problem-card.is-expanded,.problem-card:focus-within{translate:0 -4px;border-color:#8daeff;box-shadow:0 12px 30px #1557ff1c}
+.problem-card-trigger{position:relative;display:flex;align-items:center;gap:12px;width:100%;padding:0 18px 10px 0;border:0;background:none;color:#101018;font:inherit;text-align:left;cursor:pointer}
+.problem-icon{display:block;width:clamp(34px,2.7vw,50px);height:clamp(34px,2.7vw,50px);flex-shrink:0;color:#1557ff}.problem-icon svg{width:100%;height:100%;overflow:visible}
+.problem-engagement .problem-icon{color:#ef5576}.problem-impact .problem-icon{color:#7184a8}.problem-roi .problem-icon{color:#485c7f}
+.problem-card-title{font-size:clamp(12px,.95vw,18px);font-weight:800;letter-spacing:-.035em;white-space:nowrap}
+.problem-expand{position:absolute;right:0;top:8px;color:#91a0b9;font-size:16px;transition:rotate .3s}.problem-card.is-expanded .problem-expand{rotate:45deg}
+.problem-card ul{display:grid;gap:8px;list-style:none;padding:0;margin:0}.problem-card li{position:relative;padding-left:10px;font-size:clamp(11px,.74vw,14px);line-height:1.42;color:#3b475d}
+.problem-card li:before{content:'';position:absolute;left:0;top:.48em;width:4px;height:4px;border-radius:50%;background:#1557ff}.problem-card li strong{color:#172238;font-weight:700}
+.problem-card-underline{position:absolute;bottom:0;left:16px;height:3px;width:50%;border-radius:3px;background:#1557ff;transform-origin:left}
+.problem-card-trigger:focus-visible{outline:none}.problem-card:has(.problem-card-trigger:focus-visible){outline:3px solid #1557ff;outline-offset:4px}
+.problem-detail-slot{position:relative;z-index:4;min-height:0;padding-top:0}
+.problem-interaction-hint{font-size:10px;color:#7c899d;margin:4px 0 0;letter-spacing:.02em}.problem-interaction-hint span{color:#1557ff;margin-left:7px}
+.problem-detail{display:flex;align-items:center;gap:12px;background:#edf1fff5;border-left:2px solid #1557ff;padding:7px 12px;border-radius:0 8px 8px 0;min-height:40px}
+.problem-detail[hidden]{display:none}.problem-detail>div{display:flex;align-items:center;gap:15px;min-width:0}.problem-detail-title{font-size:11px;color:#1557ff;white-space:nowrap}.problem-detail-copy{font-size:11px;line-height:1.4;color:#44536b;margin:0}.problem-detail-close{border:0;background:none;color:#61718c;font-size:22px;padding:0 2px;margin-left:auto;cursor:pointer}.problem-detail:not([hidden])+.problem-interaction-hint{display:none}
+/* Motion is semantic: people pass, attention fades, taps fail, returns decline. */
+.eye-pupil{fill:currentColor;transform:translate(var(--eye-x,0px),var(--eye-y,0px));transition:transform .2s}.eye-ring{stroke-dasharray:8 10;opacity:.2;stroke-width:1.2;transform-origin:32px 32px}.eye-lid{transform-origin:32px 32px}.ban-ripple{opacity:0;transform-origin:32px 32px}.ignored-tap{opacity:0;stroke-width:2}.chart-axes{opacity:.4}.draw-stroke{stroke-dasharray:1}.roi-highlight{stroke:#1557ff;stroke-dasharray:.12 .88;opacity:0}
+.problem-slide.active .problem-tag{animation:problem-rise .6s .15s both}.problem-slide.active .problem-word{animation:problem-rise .7s .3s both}.problem-slide.active .problem-ignore{animation:problem-mask .8s .45s both}.problem-slide.active .problem-title-blue{animation:problem-blue-reveal .8s .65s both}.problem-slide.active .problem-subtitle{animation:problem-rise .65s .85s both}.problem-slide.active .problem-title-accent path{stroke-dasharray:1;animation:problem-draw .6s .9s both}
+.problem-slide.active .problem-card{animation:problem-card-enter .65s calc(1.2s + var(--card-order) * .12s) both}
+.problem-slide.active .walkby-person{animation:hero-footfall 17s var(--walk-phase) linear infinite}.problem-slide.active .walkby-leg-front{animation:full-stride .85s var(--walk-phase) ease-in-out infinite alternate}.problem-slide.active .walkby-leg-back{animation:full-stride .85s var(--walk-phase) ease-in-out infinite alternate-reverse}.problem-slide.active .walkby-front-arm{animation:full-arm-swing .85s var(--walk-phase) ease-in-out infinite alternate-reverse}.problem-slide.active .walkby-back-arm{animation:full-arm-swing .85s var(--walk-phase) ease-in-out infinite alternate}.problem-slide.active .walkby-body{animation:full-step .85s var(--walk-phase) ease-in-out infinite}
+.problem-slide.active .walkby-ad-signal{animation:missed-ad-signal 7s 1s infinite}.problem-slide.active .walkby-ad-two .walkby-ad-signal{animation-delay:3.5s}.problem-slide.active .walkby-flow{animation:footfall-flow 6s linear infinite}
+.problem-slide.active .eye-lid{animation:attention-look-away 5s 1.4s infinite}.problem-slide.active .eye-ring{animation:attention-ring-missed 6s 2s infinite}.problem-slide.active .ignored-tap{animation:visible-ignored-tap 6s 1.6s infinite}.problem-slide.active .ban-symbol>*{animation:problem-draw .9s 1.6s both}.problem-slide.active .ban-ripple{animation:unanswered-ripple 6s 2.4s infinite}
+.problem-slide.active .chart-axes{animation:problem-draw .6s 1.8s both}.problem-slide.active .decline-line{animation:visible-decline 7s 2.2s infinite}.problem-slide.active .decline-dot{animation:visible-decline-dot 7s 2.2s infinite}.problem-slide.active .coin-stack{animation:visible-budget-drain 6s 2s infinite}.problem-slide.active .coin-stack:nth-child(2){animation-delay:2.4s}.problem-slide.active .roi-line{animation:problem-draw 1s 2.3s both}.problem-slide.active .roi-highlight{animation:problem-roi-highlight 7s 3s infinite}.problem-slide.active .problem-card-underline{animation:attention-fades 6s calc(1.8s + var(--card-order) * .5s) infinite}
+.problem-card.replay .decline-line,.problem-card.replay .roi-line{animation:problem-draw .8s both}.problem-roi.replay .roi-highlight{animation:problem-roi-highlight 1s both}.problem-engagement:hover .ban-symbol{transform:rotate(-10deg);transform-origin:32px 32px;transition:transform .3s}
+.problem-slide.active .problem-status-dot{animation:passive-status 5s 2s infinite}.problem-slide.active .problem-status path{stroke-dasharray:1;animation:low-response-wave 6s 2.1s infinite}.problem-slide.active .large-eye-lid{animation:large-attention-blink 7s 1s infinite}.problem-slide.active .large-eye-pupil,.problem-slide.active .large-eye-glint{animation:large-attention-away 7s 1s infinite}.problem-slide.active .large-eye-miss{animation:large-attention-missed 7s 1s infinite}
+.problem-slide.active .attention-trail{animation:attention-passes-wide 10s linear infinite}.problem-slide.active .attention-trail-side{animation-duration:13s;animation-delay:-4s}.problem-slide.active .attention-trail-lower{animation-duration:12s;animation-delay:-7s}.problem-slide.active .problem-blue-sweep{animation:passing-light-field 16s ease-in-out infinite}
+.problem-slide:not(.active) *,.effects-paused .problem-slide *,.effects-hidden .problem-slide *{animation:none!important}
+@keyframes problem-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes problem-mask{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}
+@keyframes problem-blue-reveal{from{opacity:0;transform:translateX(-16px);clip-path:inset(0 100% 0 0)}to{opacity:1;transform:translateX(0);clip-path:inset(0)}}
+@keyframes problem-card-enter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes problem-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes hero-footfall{from{transform:translateX(-250px)}to{transform:translateX(calc(100cqw + 130px))}}
+@keyframes full-stride{from{rotate:-17deg}to{rotate:17deg}}
+@keyframes full-arm-swing{from{rotate:-12deg}to{rotate:13deg}}
+@keyframes full-step{0%,100%{translate:0 0}50%{translate:0 -2px}}
+@keyframes missed-ad-signal{0%,100%{opacity:0;scale:.85}14%{opacity:.45}40%,90%{opacity:0;scale:1.35}}
+@keyframes attention-passes-wide{from{stroke-dashoffset:1;opacity:0}20%,70%{opacity:.45}to{stroke-dashoffset:-1;opacity:0}}
+@keyframes passing-light-field{0%,100%{transform:translateX(0);opacity:.75}50%{transform:translateX(-35px);opacity:1}}
+@keyframes footfall-flow{from{transform:translateX(-145px)}to{transform:translateX(0)}}
+@keyframes attention-look-away{0%,12%,100%{transform:scaleY(1)}18%,24%{transform:scaleY(.1)}32%,80%{transform:scaleY(.6)}}
+@keyframes attention-ring-missed{0%,10%{opacity:.35;transform:scale(.85)}35%,90%{opacity:0;transform:scale(1.15)}100%{opacity:.35;transform:scale(.85)}}
+@keyframes attention-fades{0%,10%,100%{transform:scaleX(1);opacity:.7}40%,85%{transform:scaleX(.18);opacity:.2}}
+@keyframes unanswered-ripple{0%,10%,100%{opacity:0;transform:scale(.75)}20%{opacity:.3}45%,90%{opacity:0;transform:scale(1.25)}}
+@keyframes visible-decline{0%,12%{stroke-dashoffset:1;opacity:.45}35%,85%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:.45}}
+@keyframes visible-decline-dot{0%,12%{transform:translate(-39px,-26px);opacity:0}15%{opacity:1}22%{transform:translate(-26px,-15px)}28%{transform:translate(-16px,-18px)}35%,85%{transform:translate(0);opacity:1}100%{transform:translate(0);opacity:0}}
+@keyframes visible-ignored-tap{0%,8%,100%{opacity:0;transform:translate(8px,10px)}23%,38%{opacity:.85;transform:translate(0)}60%,90%{opacity:0;transform:translate(8px,10px)}}
+@keyframes visible-budget-drain{0%,12%,100%{opacity:1;transform:translateY(0)}45%,72%{opacity:.12;transform:translateY(10px)}}
+@keyframes problem-roi-highlight{0%{stroke-dashoffset:1;opacity:0}30%{opacity:1}100%{stroke-dashoffset:-1;opacity:0}}
+@keyframes passive-status{0%,100%{opacity:.4}50%{opacity:.75}}
+@keyframes low-response-wave{0%,100%{stroke-dashoffset:1;opacity:.3}25%,80%{stroke-dashoffset:0;opacity:.6}}
+@keyframes large-attention-blink{0%,15%,100%{transform:scaleY(1);opacity:1}22%,28%{transform:scaleY(.06);opacity:.8}36%,82%{transform:scaleY(.75);opacity:.45}}
+@keyframes large-attention-away{0%,15%,100%{transform:translateX(0)}35%,82%{transform:translateX(12px)}}
+@keyframes large-attention-missed{0%,28%,100%{stroke-dashoffset:1;opacity:0}45%,78%{stroke-dashoffset:0;opacity:.8}90%{stroke-dashoffset:0;opacity:0}}
+@media(max-height:800px) and (min-width:901px){.problem-slide{padding-top:78px;padding-bottom:64px}.problem-layout{gap:12px;grid-template-rows:auto minmax(130px,1fr) 180px 42px}.problem-tag{margin-bottom:9px;font-size:10px}.problem-title{font-size:3.45vw;margin-bottom:10px}.problem-subtitle{font-size:13px}.problem-card{padding:12px 13px 14px}.problem-icon{width:34px;height:34px}.problem-card-title{font-size:13px}.problem-card li{font-size:11px}.problem-status{top:18%;padding:9px 12px}}
+@media(max-width:1100px) and (min-width:901px){.problem-intro{width:64%}.problem-title{font-size:3.4vw}.problem-card{padding:10px}.problem-icon{width:30px;height:30px}.problem-card-trigger{gap:7px}.problem-card-title{font-size:11px}.problem-card li{font-size:10px}.problem-status{width:250px;font-size:8px}.problem-status svg{width:55px}.problem-detail-copy{font-size:10px}}
+@media(max-width:900px){.problem-slide{padding:110px 26px 80px;overflow-y:auto;overflow-x:hidden}.problem-layout{height:auto;grid-template-rows:auto 350px auto auto;gap:24px;max-width:none}.problem-intro{width:100%}.problem-title{font-size:clamp(36px,6.6vw,60px)}.problem-title-accent{right:5%;width:32px}.problem-subtitle{font-size:14px;max-width:85%}.problem-status{display:none}.problem-large-eye{top:75px;right:28px;width:55px;opacity:.25}.problem-retail-frame img{object-position:65% center;opacity:.35}.problem-retail-frame:after{background:linear-gradient(90deg,#f8f6f4e8,#f8f6f470),linear-gradient(0deg,#f8f6f4 0%,transparent 70%)}.problem-walkway{position:relative;width:calc(100% + 52px);margin:0 -26px;inset:auto;height:100%}.walkby-caption{left:26px;right:26px;align-items:flex-start;font-size:9px}.walkby-caption>span:last-child{max-width:50%;font-size:8px;line-height:1.4}.walkby-stage{inset:32px 0 0}.walkby-ad{width:85px}.walkby-ad-two{width:50px}.problem-slide.active .walkby-person{animation-duration:14s}.problem-cards{height:auto;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.problem-card{height:auto;min-height:260px;padding:18px 16px}.problem-card-trigger{flex-direction:column;align-items:center;padding:0 15px 14px;gap:10px;text-align:center}.problem-icon{width:48px;height:48px}.problem-card-title{font-size:14px}.problem-card li{font-size:12px}.problem-card ul{gap:12px}.problem-detail-slot{min-height:75px}.problem-detail>div{display:block}.problem-detail-copy{margin-top:4px;font-size:12px}.problem-detail{align-items:flex-start;padding:10px 12px}}
+@media(max-width:480px){.problem-title{font-size:8.3vw}.problem-title-accent{right:0;top:-10px;width:28px}.problem-subtitle{font-size:13px;max-width:100%}.problem-layout{grid-template-rows:auto 330px auto auto}.walkby-caption{font-size:8px}.walkby-caption>span:last-child{font-size:7px}.walkby-person-1,.walkby-person-3,.walkby-person-4{display:none}.walkby-person-2{--walk-phase:-7s!important;scale:.8}.walkby-ad-one{left:54%;width:72px}.walkby-ad-two{display:none}.problem-card{min-height:300px;padding:16px 12px 20px}.problem-card-title{font-size:12px}.problem-card li{font-size:11px}.problem-icon{width:46px;height:46px}.problem-card-trigger{padding-left:0;padding-right:10px}.problem-large-eye{top:73px;width:45px}.problem-detail-title{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.problem-slide *{animation:none!important;transition:none!important}.problem-slide .walkby-leg,.problem-slide .walkby-front-arm,.problem-slide .walkby-back-arm{rotate:0deg}.attention-trail{stroke-dasharray:none;opacity:.12}.problem-card:hover{translate:0 0}}
+/* Keep the motion edge-to-edge even when the content reaches its maximum width. */
+.problem-walkway{width:100vw;margin-left:calc((100% - 100vw)/2);margin-right:calc((100% - 100vw)/2)}
